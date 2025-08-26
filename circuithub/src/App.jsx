@@ -30,7 +30,9 @@ function App() {
     </div>
   
 export default App
-
+<div className="bg-purple-600 text-white text-4xl font-bold h-screen flex items-center justify-center">
+      Tailwind Fixed 🎉
+    </div>
 
     </div>
     

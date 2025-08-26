@@ -24,6 +24,14 @@ function App() {
       </h1>
     </div>
     
+
+    <div className="bg-red-500 text-white text-3xl font-bold h-screen flex items-center justify-center">
+      Tailwind Works 🚀
+    </div>
+  
+export default App
+
+
     </div>
     
   )

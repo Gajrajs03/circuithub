@@ -3,6 +3,7 @@ import './App.css'
 import Navbar from "./components/Navbar";
 import Slider from './components/slider';
 import Products from "./components/Products";
+import Footer from './components/Footer';
 function App() {
   const [count, setCount] = useState(0)
 
@@ -18,7 +19,8 @@ function App() {
       </main>
       {/* Product Section */}
       <Products />
-    
+      {/* Footer Section */}
+      <Footer />
     </div>
     
   )

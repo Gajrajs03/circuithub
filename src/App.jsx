@@ -4,26 +4,39 @@ import Navbar from "./components/Navbar";
 import Slider from './components/slider';
 import Products from "./components/Products";
 import Footer from './components/Footer';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ProductPage from './Pages/productpage';
+
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-  
-      <div className="bg-white min-h-screen">
-      {/* Navbar */}
+    <Router>
+      {/* Navbar always visible */}
       <Navbar />
-      
-      {/* Page Content */}
-      <main className="p-6">
-        <Slider />
-      </main>
-      {/* Product Section */}
-      <Products />
-      {/* Footer Section */}
+
+      <Routes>
+        {/* Homepage with Slider + Products */}
+        <Route
+          path="/"
+          element={
+            <div className="bg-gray-400 min-h-screen">
+              <main className="p-6">
+                <Slider />
+              </main>
+              <Products />
+            </div>
+          }
+        />
+
+        {/* Product Details Page */}
+        <Route path="/products" element={<ProductPage />} />
+      </Routes>
+
+      {/* Footer always visible */}
       <Footer />
-    </div>
-    
+    </Router>
   )
 }
 
-export default App
+export default App;

@@ -1,79 +1,24 @@
 import { useState } from "react";
-
+import products from "../details/productdetail";
+import { Link } from "react-router-dom";
 export default function Products() {
-  const products = [
-    {
-      id: 1,
-      name: "Obstacle Avoiding Robot",
-      price: "₹999",
-      description: "Yea aapko waise hi avoid karega jaise wo aapko karti hai",
-      image: "/Content_Image_1.jpeg",
-    },
-    {
-      id: 2,
-      name: "Arduino Car",
-      price: "₹999",
-      description: "Bluetooth controlled Arduino car",
-      image: "https://via.placeholder.com/200",
-    },
-    {
-      id: 3,
-      name: "Wireless Charger",
-      price: "₹699",
-      description: "DIY wireless charger circuit",
-      image: "https://via.placeholder.com/200",
-    },
-    {
-      id: 4,
-      name: "Line Follower Robot",
-      price: "₹1199",
-      description: "Smart robot that follows a line path",
-      image: "https://via.placeholder.com/200",
-    },
-    {
-      id: 5,
-      name: "Voice Controlled Switch",
-      price: "₹899",
-      description: "Home automation using voice commands",
-      image: "https://via.placeholder.com/200",
-    },
-    {
-      id: 6,
-      name: "Smart Door Lock",
-      price: "₹1299",
-      description: "IoT-based digital door lock system",
-      image: "https://via.placeholder.com/200",
-    },
-    {
-      id: 7,
-      name: "Solar Power Bank",
-      price: "₹1499",
-      description: "DIY solar-powered power bank",
-      image: "https://via.placeholder.com/200",
-    },
-    {
-      id: 8,
-      name: "Gesture Controlled Car",
-      price: "₹1599",
-      description: "Arduino based gesture control project",
-      image: "https://via.placeholder.com/200",
-    },
-  ];
-
   const [showAll, setShowAll] = useState(false);
 
   // Show only 6 products initially
   const visibleProducts = showAll ? products : products.slice(0, 6);
 
   return (
-    <section className="py-10 bg-white text-white">
+    <section className="py-10 bg-gray-400 text-white">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-8 text-center text-black">Our Products</h2>
+        <h2 className="text-3xl font-bold mb-8 text-center text-black">
+          Our Products
+        </h2>
+
         <div className="grid gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
           {visibleProducts.map((product) => (
             <div
               key={product.id}
-              className="bg-blue-600 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform"
+              className="bg-gray-900 p-6 rounded-2xl shadow-lg hover:scale-105 transition-transform"
             >
               <img
                 src={product.image}
@@ -85,9 +30,11 @@ export default function Products() {
               <p className="text-lg font-bold text-yellow-300 mb-4">
                 {product.price}
               </p>
-              <button className="w-full bg-yellow-400 hover:bg-yellow-500 text-black py-2 rounded-lg font-medium">
-                Buy Now
-              </button>
+              <Link to={"/products"}>
+                <button className="w-full bg-yellow-400 hover:bg-yellow-500 text-black py-2 rounded-lg font-medium">
+                  Buy Now
+                </button>
+              </Link>
             </div>
           ))}
         </div>

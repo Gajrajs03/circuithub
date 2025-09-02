@@ -1,5 +1,5 @@
-import React from "react";
-  const products = [
+
+  const Product = [
     {
       id: 1,
       name: "Obstacle Avoiding Robot",
@@ -57,4 +57,4 @@ import React from "react";
       image: "https://via.placeholder.com/200",
     },
   ];
-export default products;
+export default Product;

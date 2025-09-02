@@ -20,12 +20,12 @@ export default function Footer() {
             href="https://github.com/yourusername"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-gray-300"
+            className="hover:text-blue-300"
           >
             <FaGithub />
           </a>
           <a
-            href="https://instagram.com/yourusername"
+            href="https://www.instagram.com/circuithub3/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-pink-400"
@@ -33,7 +33,7 @@ export default function Footer() {
             <FaInstagram />
           </a>
           <a
-            href="mailto:youremail@example.com"
+            href="mailto:yourmail@example.com"
             className="hover:text-yellow-300"
           >
             <MdEmail />

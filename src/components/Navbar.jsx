@@ -47,13 +47,13 @@ export default function Navbar() {
           <FiUser className="cursor-pointer text-xl hover:text-yellow-400" />
 
           {/* Cart */}
-          <div className="relative cursor-pointer hover:text-yellow-400">
+          {/* <div className="relative cursor-pointer hover:text-yellow-400">
             <FiShoppingCart className="text-xl" />
-            {/* Optional: Add a cart badge */}
+            
             <span className="absolute -top-2 -right-3 bg-yellow-400 text-blue-700 text-xs font-bold px-2 py-0.5 rounded-full">
               0
             </span>
-          </div>
+          </div> */}
 
           {/* Mobile Menu Button */}
           <button

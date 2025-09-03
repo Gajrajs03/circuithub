@@ -10,22 +10,22 @@ import "swiper/css/pagination";
 export default function Banner2() {
   const banners = [
     {
-      title: "SMART WEARABLE.",
-      subtitle: "Best Deal Online on smart watches",
-      offer: "UP to 80% OFF",
-      image: "/watch.png",
+      title: "Fast Delivery.",
+      subtitle: "your project will be delivered within 3 days...",
+      // offer: "UP to 80% OFF",
+      image: "mapbg.png",
     },
     {
-      title: "WIRELESS EARBUDS.",
-      subtitle: "Grab the best sound deals",
-      offer: "UP to 70% OFF",
-      image: "/earbuds.png",
+      title: "Best Projects",
+      subtitle: "Projects available at lowest price...",
+      offer: "Starting from ₹250",
+      image: "imgforbanner.png",
     },
     {
-      title: "SMARTPHONE SALE.",
-      subtitle: "Latest mobiles at lowest price",
+      title: "Electronic Compponents",
+      subtitle: "Components & sensors available at lowest price",
       offer: "UP to 50% OFF",
-      image: "/phone.png",
+      image: "electrocomp.png",
     },
   ];
 
@@ -57,7 +57,7 @@ export default function Banner2() {
                 <img
                   src={banner.image}
                   alt={banner.title}
-                  className="w-48 h-auto object-contain" /* smaller image */
+                  className="w-50 h-auto object-contain" /* smaller image */
                 />
               </div>
             </div>

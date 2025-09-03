@@ -12,7 +12,7 @@ export default function Products() {
     <section className="py-10 text-white">
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-3xl font-bold mb-8 text-center text-white">
-          Our Products
+          Our Projects
         </h2>
 
         {/* Grid updated → 5 per row on large screens */}

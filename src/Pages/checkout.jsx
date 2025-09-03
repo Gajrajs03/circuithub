@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import products from "../details/productdetail";
+import emailjs from "@emailjs/browser";
 
 export default function Checkout() {
   const { id } = useParams();
@@ -28,7 +29,7 @@ export default function Checkout() {
     }
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     if (form.city.toLowerCase() !== "jhansi") {
@@ -36,34 +37,38 @@ export default function Checkout() {
       return;
     }
 
-    try {
-      const res = await fetch("/api/sendOrder", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-
-      if (res.ok) {
-        alert("✅ Your order is placed!");
-        setForm({
-          name: "",
-          contact: "",
-          product: product ? product.name : "",
-          address: "",
-          city: "",
-          state: "",
-          pincode: "",
-        });
-      } else {
-        alert("❌ Failed to place order");
-      }
-    } catch (err) {
-      console.error(err);
-      alert("❌ Something went wrong");
-    }
+    // ✅ Send email using EmailJS
+    emailjs
+      .send(
+        "service_g0xewaj",   // 🔹 Replace with your Service ID
+        "template_rvvfrke",  // 🔹 Replace with your Template ID
+        form,                // 🔹 This sends all form fields (must match {{placeholders}})
+        "ylxBMxehnI_-NpEbC"    // 🔹 Replace with your Public Key
+      )
+      .then(
+        () => {
+          alert("✅ Your order has been placed! Check your email. we'll contact you shortly..");
+          setForm({
+            name: "",
+            contact: "",
+            product: product ? product.name : "",
+            address: "",
+            city: "",
+            state: "",
+            pincode: "",
+          });
+        },
+        (error) => {
+          console.error(error.text);
+          alert("❌ Failed to send order. Try again later!");
+        }
+      );
   };
 
-  if (!product) return <h2 className="text-center text-red-500 mt-10">Product not found</h2>;
+  if (!product)
+    return (
+      <h2 className="text-center text-red-500 mt-10">Product not found</h2>
+    );
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-950 via-purple-950 to-black flex justify-center items-center p-6">
@@ -71,7 +76,9 @@ export default function Checkout() {
         onSubmit={handleSubmit}
         className="bg-white/10 backdrop-blur-xl border border-white/0 p-6 rounded-xl shadow-lg w-full max-w-md"
       >
-        <h2 className="text-xl text-gray-200 font-semibold mb-4 text-center">Checkout</h2>
+        <h2 className="text-xl text-gray-200 font-semibold mb-4 text-center">
+          Checkout
+        </h2>
 
         <input
           type="text"
@@ -143,7 +150,7 @@ export default function Checkout() {
 
         <button
           type="submit"
-          className="w-full bg-blue-600  py-2 rounded hover:bg-blue-700"
+          className="w-full bg-blue-600 py-2 rounded hover:bg-blue-700"
         >
           Place Order
         </button>

@@ -9,9 +9,7 @@ import ProductPage from "./Pages/productpage";
 import { useState } from 'react'
 import './App.css'
 
-import Slider from './components/slider';
-
-import Banner from './components/slider';
+import Banner2 from "./components/slider2";
 
 function App() {
   return (

@@ -1,5 +1,4 @@
 import React from "react";
-import Slider from "../components/slider";
 import Navbar from "../components/Navbar";
 import Products from "../components/Products";
 import Banner2 from "../components/slider2";

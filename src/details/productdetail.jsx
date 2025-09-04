@@ -56,5 +56,40 @@
       description: "Arduino based gesture control project",
       image: "gesturecar.png",
     },
+    {
+      id:9,
+      name: "Smart Irrigation System",
+      price: "₹1999",
+      description: "Automated irrigation using soil moisture sensors",
+      image: "irrigationsystem.jpg",
+    },
+    {
+      id:10,
+      name: "RFID Based Access Control",
+      price: "₹1199",
+      description: "Secure access using RFID technology",
+      image: "RFIDbasedaccesscontrol.jpg",
+    },
+    {
+      id:11,
+      name: "DHT11 Humidity and Temperature Sensor",
+      price: "₹499",
+      description: "Measure humidity and temperature with DHT11 sensor",
+      image: "temperature.jpg",
+    },
+    {
+      id:12,
+      name: "Automatic Plant Watering System",
+      price: "₹899",
+      description: "Keep your plants hydrated automatically",
+      image: "Automaticwateringsystem.jpg",
+    },
+    {
+      id:13,
+      name: "Motion Detector Alarm",
+      price: "₹799",
+      description: "Detects motion and triggers an alarm",
+      image: "motiondetectionalarm.jpg",
+    }
   ];
 export default Product;

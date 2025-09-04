@@ -4,14 +4,14 @@
       id: 1,
       name: "Obstacle Avoiding Robot",
       price: "₹999",
-      description: "Yea aapko waise hi avoid karega jaise wo aapko karti hai",
+      description: "a robot which avoids whatever comes in its path and changes its direction automatically",
       image: "/Content_Image_1.jpeg",
     },
     {
       id: 2,
       name: "Arduino Car",
       price: "₹999",
-      description: "Bluetooth controlled Arduino car",
+      description: "Its a bluetooth controlled car using arduino which can be controlled using mobile." ,
       image: "/image2.jpeg",
     },
     {

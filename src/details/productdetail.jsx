@@ -56,5 +56,33 @@
       description: "Arduino based gesture control project",
       image: "gesturecar.png",
     },
+    {
+      id: 9,
+      name: "Piezzoelctric Sensor based voltage generator",
+      price: "₹199",
+      description: "Generates electricity from vibrations.",
+      image: "Piezzoelectric.jpg",
+    },
+    {
+      id: 10,
+      name: "Staircase Home Automation",
+      price: "₹199",
+      description: "Auto lights for staircases, saves energy & adds safety.",
+      image: "Staircase.webp",
+    },
+   {
+      id: 11,
+      name: "Smart Irrigation System Using Arduino",
+      price: "₹199",
+      description: "Auto-waters plants using soil moisture detection.",
+      image: "Irrigation.jpeg",
+    },
+    {
+      id: 12,
+      name: "Electronic Voting Machine using  Arduino",
+      price: "₹199",
+      description: "A digital voting system with automatic vote counting and instant result display",
+      image: "Evm.jpeg",
+    },
   ];
 export default Product;

@@ -33,7 +33,7 @@ export default function Footer() {
             <FaInstagram />
           </a>
           <a
-            href="mailto:yourmail@example.com"
+            href="mailto:circuithub50@gmail.com"
             className="hover:text-yellow-300"
           >
             <MdEmail />

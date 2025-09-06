@@ -2,9 +2,12 @@ import { useNavigate } from "react-router-dom";
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 import Product from "../details/productdetail";
-import { FiShoppingCart, FiTruck, FiTag } from "react-icons/fi";
+import { FiShoppingCart, FiTruck, FiTag, FiList } from "react-icons/fi";
+import { useContext } from "react";
+// import { CartContext } from "../components/CartContext";
 
 export default function ProductPage() {
+  // const { addToCart } = useContext(CartContext);
   const navigate = useNavigate();
   const { id } = useParams(); // get product ID from URL
   const product = Product.find((p) => p.id === parseInt(id));
@@ -38,52 +41,54 @@ export default function ProductPage() {
         </div>
 
         {/* Product Details */}
-        <div className="lg:col-span-5 bg-white/10 backdrop-blur-xl border border-white/0 rounded-md shadow-sm p-6">
+        <div className="lg:col-span-3 bg-white/10 backdrop-blur-xl border border-white/0 rounded-md shadow-sm p-6">
           <h1 className="text-2xl md:text-3xl font-semibold mb-2 text-gray-400">
             {product.name}
           </h1>
 
-          <div className="flex items-center mb-3">
+          {/* <div className="flex items-center mb-3">
             <span className="bg-green-600 text-white text-xs font-semibold px-2 py-1 rounded mr-2">
               4.3 ★
             </span>
             <span className="text-sm text-gray-400">
               12,534 Ratings & 1,210 Reviews
             </span>
-          </div>
+          </div> */}
 
           <div className="flex items-center gap-4 mb-4">
             <p className="text-3xl font-bold text-gray-400">{product.price}</p>
-            <p className="text-sm line-through text-gray-400">
+            {/* <p className="text-sm line-through text-gray-400">
               ₹{parseInt(product.price.replace("₹", "")) + 500}
-            </p>
-            <p className="text-sm text-green-600 font-medium">10% off</p>
+            </p> */}
+            <p className="text-sm text-green-600 font-medium">20% off</p>
           </div>
 
           <p className="text-gray-400 mb-4">{product.description}</p>
 
           <div className="flex flex-col sm:flex-row gap-3">
-            <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-md py-3 flex-1 flex items-center justify-center gap-2">
+            {/* <button 
+            onClick={() => addToCart(product)}
+            className="bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-md py-3 flex-1 flex items-center justify-center gap-2">
               <FiShoppingCart size={18} /> Add to Cart
-            </button>
+            </button> */}
             <button
             onClick={() => navigate(`/checkout/${product.id}`)}
-            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-md py-3 flex-1">
+            className="bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-md py-3 flex-1">
               Buy Now
             </button>
           </div>
 
           {/* Back to Products */}
           <Link to="/products">
-            <button className="mt-4 bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-md">
+            <button className="mt-4 bg-blue-600 hover:bg-blue-700 text-gray-800 px-4 py-2 rounded-md">
               ← Back to Products
             </button>
           </Link>
         </div>
 
         {/* Delivery & Offers */}
-        <div className="lg:col-span-2 bg-white/10 backdrop-blur-xl border border-white/0  rounded-md shadow-sm p-4">
-          <p className="text-sm font-medium text-gray-400 mb-2 flex items-center gap-2">
+        <div className="lg:col-span-4 bg-white/10 backdrop-blur-xl border border-white/0  rounded-md shadow-sm p-4">
+          {/* <p className="text-sm font-medium text-gray-400 mb-2 flex items-center gap-2">
             <FiTruck /> Delivery
           </p>
           <p className="text-sm text-gray-400 mb-4">
@@ -97,12 +102,23 @@ export default function ProductPage() {
             <li>Bank Offer: 10% instant discount on Credit Cards</li>
             <li>Special Price: Get extra ₹200 off</li>
             <li>No Cost EMI available</li>
+          </ul> */}
+          <h5 className="text-sm font-medium text-gray-400 mb-2 flex items-center gap-2">
+            <FiList /> Product Details
+          </h5>
+          <p className="text-sm text-gray-400">{product.detail}</p>
+          <ul className="pt-2">
+            {product.Component.split("\n").map((item, index) => (
+              <li key={index} className="text-sm text-gray-400 pt-2">
+                {item}
+              </li>
+            ))}
           </ul>
         </div>
       </div>
 
       {/* Reviews Section */}
-      <div className="mt-8 bg-white/10 backdrop-blur-xl border border-white/0 rounded-md shadow-sm p-6">
+      {/* <div className="mt-8 bg-white/10 backdrop-blur-xl border border-white/0 rounded-md shadow-sm p-6">
         <h2 className="text-lg font-semibold mb-4 text-gray-400">Ratings & Reviews</h2>
         <div className="space-y-6">
           {[1, 2].map((i) => (
@@ -122,7 +138,7 @@ export default function ProductPage() {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

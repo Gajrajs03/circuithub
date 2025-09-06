@@ -3,13 +3,14 @@ import Checkout from "./Pages/checkout";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Home from "./Pages/Home";       // 👈 new Home page
+import Home from "./Pages/Home";      
 import Products from "./components/Products";
 import ProductPage from "./Pages/productpage";
 import { useState } from 'react'
 import './App.css'
-
+// import Cart from "./Pages/Cart"
 import Banner2 from "./components/slider2";
+
 
 function App() {
   return (
@@ -27,7 +28,10 @@ function App() {
         {/* Individual product page */}
         <Route path="/products/:id" element={<ProductPage />} />
         <Route path="/checkout/:id" element={<Checkout />} />
-         <Route path="/search" element={<SearchResults />} />
+        <Route path="/search" element={<SearchResults />} />
+        {/* <Route path="/cart" element={<Cart />} /> */}
+        {/* <Route path="/checkout" element={<Checkout />} /> */}
+
       </Routes>
 
       {/* Footer always visible */}

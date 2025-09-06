@@ -82,7 +82,7 @@ export default function Products() {
 
   // Show only 6 products initially (if not searching)
   const visibleProducts =
-    showAll || searchTerm ? filteredProducts : filteredProducts.slice(0, 6);
+    showAll || searchTerm ? filteredProducts : filteredProducts.slice(0, 10);
 
   return (
     <section className="py-10 text-white">
@@ -112,7 +112,7 @@ export default function Products() {
                 </p>
                 <Link to={`/products/${product.id}`}>
                   <button className="w-full bg-purple-600 hover:bg-purple-700 text-white py-1.5 rounded-md text-xs font-medium">
-                    Buy Now
+                    View Project
                   </button>
                 </Link>
               </div>
@@ -125,7 +125,7 @@ export default function Products() {
         )}
 
         {/* View More Button (hide if searching) */}
-        {!searchTerm && !showAll && products.length > 6 && (
+        {!searchTerm && !showAll && products.length > 10 && (
           <div className="mt-8 text-center">
             <button
               onClick={() => setShowAll(true)}

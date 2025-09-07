@@ -85,7 +85,7 @@ import { Component } from "react";
     {
       id: 6,
       name: "Smart Door Lock",
-      price: "₹899",
+      price: "₹799",
       description: "IoT-based digital door lock system",
       image: "/image6.jpg",
       detail:"A secure and affordable smart door lock system that unlocks with a password. It enhances home security while being simple to build and cost-effective.",

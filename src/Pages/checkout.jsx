@@ -40,10 +40,10 @@ export default function Checkout() {
     // ✅ Send email using EmailJS
     emailjs
       .send(
-        "service_g0xewaj",   // 🔹 Replace with your Service ID
-        "template_rvvfrke",  // 🔹 Replace with your Template ID
+        VITE_EMAILJS_SERVICE_ID,   // 🔹 Replace with your Service ID
+        VITE_EMAILJS_TEMPLATE_ID,  // 🔹 Replace with your Template ID
         form,                // 🔹 This sends all form fields (must match {{placeholders}})
-        "ylxBMxehnI_-NpEbC"    // 🔹 Replace with your Public Key
+        VITE_EMAILJS_PUBLIC_KEY    // 🔹 Replace with your Public Key
       )
       .then(
         () => {

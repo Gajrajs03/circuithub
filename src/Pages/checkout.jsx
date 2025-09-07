@@ -93,7 +93,7 @@ export default function Checkout() {
         <input
           type="tel"
           name="contact"
-          placeholder="Contact Number"
+          placeholder="Whatsapp Number"
           value={form.contact}
           onChange={handleChange}
           required

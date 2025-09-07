@@ -147,6 +147,7 @@ export default function Checkout() {
           required
           className="w-full bg-white/0 backdrop-blur-xl border border-white/50 p-2 mb-3 rounded"
         />
+        <p className="text-sm text-gray-400 pb-2">*A confirmation message will be sent to your whatsapp.</p>
 
         <button
           type="submit"

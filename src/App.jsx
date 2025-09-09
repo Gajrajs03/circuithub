@@ -37,7 +37,12 @@ function App() {
 
       {/* Footer always visible */}
       <Footer />
+
+      {/* ✅ Place Analytics at the root, outside Routes */}
+      <Analytics />
     </Router>
+
+    
   );
 }
 

@@ -264,7 +264,7 @@ const Product = [
   {
     id: 19,
     name: "Smart LED Chaser Circuit Using Arduino",
-    price: "₹399",
+    price: "₹449",
     description:
       "A circuit that controls a series of LEDs to create a moving light effect, with customizable patterns and speeds.",
     image: "/LED_Chaser.jpeg",
@@ -324,7 +324,7 @@ const Product = [
   {
     id: 23,
     name: "Automatic Water level alarm using Arduino",
-    price: "₹349",
+    price: "₹499",
     description:
       "Detects water reaching a certain level and triggers an alarm.",
     image: "/wateralarm.webp",

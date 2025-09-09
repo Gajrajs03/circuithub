@@ -80,7 +80,7 @@ export default function Products() {
       )
     : products;
 
-  // Show only 6 products initially (if not searching)
+  // Show only 10 products initially (if not searching)
   const visibleProducts =
     showAll || searchTerm ? filteredProducts : filteredProducts.slice(0, 10);
 
@@ -96,31 +96,40 @@ export default function Products() {
             {visibleProducts.map((product) => (
               <div
                 key={product.id}
-                className="bg-white/10 backdrop-blur-xl border border-white/0 hover:bg-white/15 p-2 rounded-xl shadow-lg hover:scale-105 transition-transform"
+                className="bg-white/10 backdrop-blur-xl border border-white/0 hover:bg-white/15 p-2 rounded-xl shadow-lg hover:scale-105 transition-transform flex flex-col"
+                style={{ height: "300px" }} // ✅ same height for all cards
               >
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-32 object-cover rounded-md mb-2"
-                />
-                <h3 className="text-base font-semibold">{product.name}</h3>
-                <p className="text-blue-200 text-xs mb-1 line-clamp-2">
-                  {product.description}
-                </p>
-                <p className="text-sm font-bold text-yellow-300 mb-2">
-                  {product.price}
-                </p>
-                <Link to={`/products/${product.id}`}>
-                  <button className="w-full bg-purple-600 hover:bg-purple-700 text-white py-1.5 rounded-md text-xs font-medium">
-                    View Project
-                  </button>
-                </Link>
+                {/* Card Content */}
+                <div className="flex-grow">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-32 object-cover rounded-md mb-2"
+                  />
+                  <h3 className="text-base font-semibold">{product.name}</h3>
+                  <p className="text-blue-200 text-xs mb-1 line-clamp-2">
+                    {product.description}
+                  </p>
+                  <p className="text-sm font-bold text-yellow-300">
+                    {product.price}
+                  </p>
+                </div>
+
+                {/* Button always at bottom */}
+                <div className="mt-2">
+                  <Link to={`/products/${product.id}`}>
+                    <button className="w-full bg-purple-600 hover:bg-purple-700 text-white py-1.5 rounded-md text-xs font-medium">
+                      View Project
+                    </button>
+                  </Link>
+                </div>
               </div>
             ))}
           </div>
         ) : (
           <p className="text-center text-lg text-gray-300">
-            No projects found for "<span className="text-yellow-300">{searchTerm}</span>"
+            No projects found for{" "}
+            <span className="text-yellow-300">{searchTerm}</span>
           </p>
         )}
 

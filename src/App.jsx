@@ -8,6 +8,7 @@ import Products from "./components/Products";
 import ProductPage from "./Pages/productpage";
 import { useState } from 'react'
 import './App.css'
+import { Analytics } from "@vercel/analytics/react"
 // import Cart from "./Pages/Cart"
 import Banner2 from "./components/slider2";
 

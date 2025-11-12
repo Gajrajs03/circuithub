@@ -145,6 +145,26 @@ const Product = [
       • Power Supply (9V battery or adapter)`,
   },
   {
+    id: 20,
+    name: "Clap Based Fan Switching System Using Arduino",
+    price: "₹799",
+    description:
+      "Sound-activated fan control system using microphone and transistor circuit.",
+    image: "/Asca.jpg",
+    detail:
+      "This project allows you to switch ON/OFF a fan by simply clapping. It detects sound signals through a microphone and processes them using a transistor-based circuit.",
+    Component: `🛠️ Components:
+       • Condenser Microphone
+    • BC547 Transistors (2 pcs)
+    • Resistors & Capacitors (as per circuit)
+    • 5V Relay Module
+    • Diode 1N4007
+    • LED (Indicator)
+    • Small Fan (Load)
+      • Power Supply (9V battery or adapter)`,
+  },
+
+  {
     id: 10,
     name: "RFID Based Attendance system",
     price: "₹649",
@@ -160,6 +180,26 @@ const Product = [
       •Jumper Wires
       •Breadboard
       •Power Supply (9V battery)`,
+  },
+
+  {
+    id: 25,
+    name: "Clap Based Fan Switching System Using Using 555 Timer IC",
+    price: "₹599",
+    description: "Automated irrigation using soil moisture sensors",
+    image: "/Asct.jpg",
+    detail:
+      "An automatic irrigation system that monitors soil moisture and waters plants only when needed. This project helps save water and ensures healthy plant growth with minimal effort.",
+    Component: `🛠️ Components:
+      • NE555 Timer IC
+    • Condenser Microphone
+    • Cd-4017
+    • Resistors & Capacitors (as per circuit)
+    • 5V Relay Module
+    • Diode 1N4007
+    • LED (Indicator)
+    • Small Fan (Load)
+      • Power Supply (9V battery or adapter)`,
   },
   {
     id: 11,
